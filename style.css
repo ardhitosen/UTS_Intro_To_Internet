@@ -1,0 +1,36 @@
+#logo {
+  width: 10%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius:50%;
+  display: block;
+  margin-top: 1%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.player-text
+{
+    margin-top:7%;
+}
+
+.form-floating
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;   
+}
+
+.buttons
+{
+    display:flex;
+    justify-content: center;
+    margin-right:5.5%;
+}
+
+#player-names 
+{
+    display:table;
+    margin: 0 auto;
+}
