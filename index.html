@@ -12,7 +12,7 @@
   <body>
     <div class="container-fluid">
         <div class="player-text">
-            
+            <h1 id="playcount">1st Player</h1>
         </div>
         <div class="form-floating mb-3" style="width:20%">
             <input type="text" class="form-control" id="newplayer" placeholder="New Player" required>
@@ -29,7 +29,7 @@
         <h3 class="display-6" style="text-align:center; margin-top: 2%;">Player List</h3>
         
         <ul id="player-names">
-        
+            
         </ul>
         
         
@@ -58,16 +58,33 @@
     </div>
   </body>
     <script>
+        var count = 1;
         var l = document.getElementById("add-player");
         
 
         function addPlayers()
         {
-            var y = document.getElementById("newplayer").value;
-            var x = document.createElement("li");
-            x.innerHTML = y;
-            document.getElementById("player-names").appendChild(x);
+            if(document.getElementById("newplayer").value.length == 0){
+                alert("dawdadwa");
+            }else{
+                ++count;
+                var y = document.getElementById("newplayer").value;
+                var x = document.createElement("li");
+                x.innerHTML = y;
+                document.getElementById("player-names").appendChild(x);
+
+                var a = document.getElementById("playcount");
+                if(count == 2){
+                    a.innerHTML = "2nd Player";
+                }else if(count == 3){
+                    a.innerHTML = "3rd Player";
+                }else{
+                    a.innerHTML = count + "th Player";
+                }
+            }
         }
+
+        
 
     </script>
 </html>
