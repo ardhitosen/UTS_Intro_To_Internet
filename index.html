@@ -79,14 +79,16 @@
             }
         }
 
-        window.onload = function()
-        {
-            localStorage.setItem("PlayerAmount", count);
-        }
-
         document.getElementById("play").onclick= function()
         {
-            location.href="game.html";
+            if(count < 2)
+            {
+                alert("Kekurangan Player!");
+            }
+            else{
+                localStorage.setItem("PlayerAmount", count-1);
+                location.href="game.html";
+            }
         }
     </script>
 </html>
