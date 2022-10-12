@@ -66,6 +66,7 @@
 {
   display: flex;
   justify-content: center;  
+  margin-bottom: 3%;
 }
 
 #Endbutton button
@@ -81,8 +82,8 @@
 
 #steal
 {
-    margin-top: 5%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
+  margin-top: 5%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
