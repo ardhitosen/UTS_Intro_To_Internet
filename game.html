@@ -41,7 +41,8 @@
     <script>
         window.onload = localStorage.getItem("PlayerAmount");
         var bonecount = localStorage.getItem("PlayerAmount") * 4;
-        alert(bonecount);
+        randomnumber = Math.floor(Math.random()*bonecount) + 1;
+        alert(randomnumber);
         $(document).ready(function()
         {
             for(i = 0; i<bonecount;i++)
@@ -55,6 +56,20 @@
             input.setAttribute("style","width:50%;");
             document.getElementById("bones").appendChild(div);
             document.getElementById(("divbone"+(i+1))).appendChild(input);
+        }
+        });
+        $(document).ready(function()
+        {
+            $("input").click(function() {
+                $(this).hide();
+            });
+        });
+
+        $(document).ready(function()
+        {
+        document.getElementById(("bone"+randomnumber)).onclick = function()
+        {
+            window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
         }
         });
     </script>
