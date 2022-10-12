@@ -11,13 +11,20 @@
         </div>
     </head>
     <body>
-        <audio src="/media/audio/kucing.mp3" controls loop></audio>
-        <img src="assets/sleepdog.png" id="anjing"></div>
-        <div id="bones">
-
+        <div id="Gameatas">
+            <h4 id="play-turn">Turns: 1st Player</h4>
+            <h4 id="countdown">Times:</h4>
         </div>
+            <img src="assets/sleepdog.png" id="anjing"></div>
+            <div id="bones">
 
+            </div>
 
+        <div id="Endgame" style="display: none;">
+            <h3 class="display-6" style="text-align:center; margin-top: 2%;">Oh no! You wake him up</h3>
+            <button type="button" class="btn btn-primary btn-lg" id="add-player" onClick= "reloadGame()">Play Again</button>
+            <button type="button" class="btn btn-primary btn-lg" id="add-player" onClick="addPlayers()">Back to Home</button>
+        </div>
 
 
 
@@ -39,6 +46,7 @@
         ></script>
     </body>
     <script>
+        var count = 1;
         window.onload = localStorage.getItem("PlayerAmount");
         var bonecount = localStorage.getItem("PlayerAmount") * 4;
         randomnumber = Math.floor(Math.random()*bonecount) + 1;
@@ -62,6 +70,15 @@
         {
             $("input").click(function() {
                 $(this).hide();
+                var a = document.getElementById("play-turn");
+                count++;
+                if(count == 2){
+                    a.innerHTML = "Turns: 2nd Player";
+                }else if(count == 3){
+                    a.innerHTML = "Turns: 3rd Player";
+                }else{
+                    a.innerHTML = "Turns: " + count + "th Player";
+                }
             });
         });
 
@@ -69,8 +86,35 @@
         {
         document.getElementById(("bone"+randomnumber)).onclick = function()
         {
-            window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+
+            alert("adsda");
+            gameEnded();
+            var take = document.getElementById("Gameatas");
+            var bonehide = document.getElementById("bones");
+            bonehide.style.display = "none";
+            take.style.display = "none";
         }
         });
+
+        var timeleft = 10;
+        var downloadTimer = setInterval(function(){
+            if(timeleft <= 0){
+                clearInterval(downloadTimer);
+                
+            } else {
+                document.getElementById("countdown").innerHTML = "Times: " + timeleft + " seconds remaining";
+            }
+            timeleft -= 1;
+            }, 1000);
+
+        function gameEnded(){
+            var but = document.getElementById("Endgame");
+            but.style.display = "block";
+        }
+
+        function reloadGame()
+        {
+            location.reload();
+        }
     </script>
 </html>
