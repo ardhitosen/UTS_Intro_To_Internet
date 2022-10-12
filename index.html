@@ -79,7 +79,14 @@
             }
         }
 
-        
+        window.onload = function()
+        {
+            localStorage.setItem("PlayerAmount", count);
+        }
 
+        document.getElementById("play").onclick= function()
+        {
+            location.href="game.html";
+        }
     </script>
 </html>
