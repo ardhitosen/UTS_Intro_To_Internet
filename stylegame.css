@@ -74,8 +74,15 @@
   margin-right: 2%;
 }
 
-
 #volume
 {
   float:right;
+}
+
+#steal
+{
+    margin-top: 5%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
